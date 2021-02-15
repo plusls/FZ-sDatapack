@@ -39,8 +39,7 @@ scoreboard objectives add damageTaken dummy
 scoreboard objectives add activation dummy
 scoreboard objectives add totalList dummy
 scoreboard objectives add bedrockBreaked dummy
-scoreboard objectives add fz.bbl dummy
-
+    scoreboard objectives add fz.bbl minecraft.custom:minecraft.break_bedrock
 scoreboard objectives modify activation displayname {"text": "活跃时间(h)","color": "aqua"}
 scoreboard objectives modify damageTaken displayname {"text": "抖M名单","color": "yellow"}
 scoreboard objectives modify deathCounter displayname {"text": "死亡榜","color": "dark_red"}
@@ -88,6 +87,7 @@ scoreboard players operation 总挖掘量 digCounter = 总挖掘量 digCounter
 scoreboard players operation 总钓鱼数 fishingCounter = 总钓鱼数 fishingCounter
 scoreboard players operation 总击杀数 killCounter = 总击杀数 killCounter
 scoreboard players operation 总交♂易数 tradingCounter = 总交♂易数 tradingCounter
+scoreboard players operation 全员头铁 bedrockBreaked = 全员头铁 bedrockBreaked
 #总榜的总量
 scoreboard players operation 总在线时间(h) totalList = 总在线时间(h) totalList
 scoreboard players operation 群p抖M totalList = 群p抖M totalList
@@ -96,6 +96,7 @@ scoreboard players operation 总挖掘量 totalList = 总挖掘量 totalList
 scoreboard players operation 总钓鱼数 totalList = 总钓鱼数 totalList
 scoreboard players operation 总击杀数 totalList = 总击杀数 totalList
 scoreboard players operation 总交♂易数 totalList = 总交♂易数 totalList
+scoreboard players operation 全员头铁 totalList = 全员头铁 totalList
 
 scoreboard objectives setdisplay sidebar.team.aqua activation
 scoreboard objectives setdisplay sidebar.team.yellow damageTaken
