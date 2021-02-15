@@ -23,7 +23,7 @@ __command() -> (
 				round((pos:0)*8), round((pos:2)*8)
 			))
 		),
-		dim == 'the_nether',
+		dim == 'the_end',
 		(
 		run(str('tellraw @a [{"selector": "@s"},{"text":"说: 我在末地[x:%d, y:%d, z:%d, dim:%s]","color": "aqua"}]',
 			round(pos:0), round(pos:1), round(pos:2), dim
