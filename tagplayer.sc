@@ -368,7 +368,7 @@ drop_continuous(player_name) ->(
 );
 drop_interval(player_name,tick) ->(
 	f_player = player(player_name);
-	check_fakeplayer(player_name);	run(str('player %s drop interval %d', player_name, tick));
+	check_fakeplayer(player_name);	run(str('player %s drop interval %d', player_name, tick));
 	delete_file(f_player + '-' + 'drop', 'text');
 	write_file(f_player + '-' + 'drop', 'text', tick);
 	return()
@@ -526,7 +526,7 @@ use_continuous(player_name) ->(
 );
 use_interval(player_name,tick) ->(
 	f_player = player(player_name);
-	check_fakeplayer(player_name);	run(str('player %s use interval %d', player_name, tick));
+	check_fakeplayer(player_name);	run(str('player %s use interval %d', player_name, tick));
 	delete_file(f_player + '-' + 'use', 'text');
 	write_file(f_player + '-' + 'use', 'text', tick);
 	return()
