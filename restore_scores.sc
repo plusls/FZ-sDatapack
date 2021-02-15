@@ -111,6 +111,7 @@ __restore(pl, s_player) ->(
 	scoreboard_remove('fishingCounter');
 	scoreboard_remove('damageTaken');
 	scoreboard_remove('activation');
+	scoreboard_remove('bedrockBreaked');
 	scoreboard_remove('totalList');
 	scoreboard_add('killCounter');
 	scoreboard_add('digCounter');
@@ -119,6 +120,7 @@ __restore(pl, s_player) ->(
 	scoreboard_add('fishingCounter');
 	scoreboard_add('damageTaken');
 	scoreboard_add('activation');
+	scoreboard_add('bedrockBreaked');
 	scoreboard_add('totalList');
 	total_actime = 0;
 	total_death = 0;
@@ -173,7 +175,7 @@ __restore(pl, s_player) ->(
 		//破基岩榜
 		break_bedrock = statistic(pl:i, 'custom', 'break_bedrock');
 		print(break_bedrock);
-		scoreboard('tradingCounter', pl:i, break_bedrock);
+		scoreboard('bedrockBreaked', pl:i, break_bedrock);
 		total_break_bedrock += break_bedrock;
 		run('player ' + pl:i + ' kill')
 	);
@@ -192,7 +194,7 @@ __restore(pl, s_player) ->(
 	scoreboard('damageTaken', '群p抖M', total_hurt);
 	scoreboard('totalList', '群p抖M)', total_hurt);
 	scoreboard('bedrockBreaked', '全员头铁', total_break_bedrock);
-	scoreboard('totalList', '全员头铁)', total_break_bedrock);
+	scoreboard('totalList', '全员头铁', total_break_bedrock);
 	
 	game_tick(50);
 	run('function fz:scoreboards/install')
