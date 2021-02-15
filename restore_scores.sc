@@ -171,10 +171,10 @@ __restore(pl, s_player) ->(
 		scoreboard('tradingCounter', pl:i, traded);
 		total_traded += traded;
 		//破基岩榜
-		bedrock_breaked = statistic(pl:i, 'custom', 'traded_with_villager');
-		print(bedrock_breaked);
-		scoreboard('tradingCounter', pl:i, bedrock_breaked);
-		total_bedrock_breaked += bedrock_breaked;
+		break_bedrock = statistic(pl:i, 'custom', 'break_bedrock');
+		print(break_bedrock);
+		scoreboard('tradingCounter', pl:i, break_bedrock);
+		total_break_bedrock += break_bedrock;
 		run('player ' + pl:i + ' kill')
 	);
 	scoreboard('tradingCounter', '总交♂易数', total_traded);
@@ -191,8 +191,8 @@ __restore(pl, s_player) ->(
 	scoreboard('totalList', '总在线时间(h)', total_actime);
 	scoreboard('damageTaken', '群p抖M', total_hurt);
 	scoreboard('totalList', '群p抖M)', total_hurt);
-	scoreboard('bedrockBreaked', '全员头铁)', total_bedrock_breaked);
-	scoreboard('totalList', '全员头铁)', total_bedrock_breaked);
+	scoreboard('bedrockBreaked', '全员头铁', total_break_bedrock);
+	scoreboard('totalList', '全员头铁)', total_break_bedrock);
 	
 	game_tick(50);
 	run('function fz:scoreboards/install')
