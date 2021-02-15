@@ -2,22 +2,22 @@
 schedule function fz:config/timeout 300s
 #输出玩家可见的设置页面
 ##扫地机
-execute if data storage fz.installed {sweeper: 1b} run tellraw @s {"text": "扫地机：","color": "#ccff00"}
-    ##扫地机时间，对应分数1478966210-1478966215
-    execute if data storage fz.installed {sweeper: 1b} run tellraw @s [{"text": "- "},{"text": "[关]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966210"}},{"text": "[30秒]","color": "#5fff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966211"}},{"text": "[1分钟]","color": "#d7ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966212"}},{"text": "[2分钟]","color": "#ffd900","clickEvent": {"action": "run_command","value": "/trigger config set 1478966213"}},{"text": "[3分钟]","color": "#ff6100","clickEvent": {"action": "run_command","value": "/trigger config set 1478966214"}},{"text": "[4分钟]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966215"}}]
-    ##开启矿车白名单1478966216
-    execute if data storage fz.installed {sweeper: 1b} unless score keepMinecart parameter matches 1 run tellraw @s [{"text": "- "},{"text": "矿车白名单：","color": "#8c8f91"},{"text": "[已关闭]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966216"}}]
-    ##关闭矿车白名单1478966217
-    execute if data storage fz.installed {sweeper: 1b} if score keepMinecart parameter matches 1 run tellraw @s [{"text": "- "},{"text": "矿车白名单：","color": "#8c8f91"},{"text": "[已开启]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966217"}}]
-    ##声音提示
-    execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=!fz.sweeperSoundOff] [{"text": "- "},{"text": "声音：","color": "#8c8f91"},{"text": "[已开启]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966209"}}]
-    execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=fz.sweeperSoundOff] [{"text": "- "},{"text": "声音：","color": "#8c8f91"},{"text": "[已关闭]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966208"}}]
-    ##消息提示
-    execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=!fz.sweeperMessageOff] [{"text": "- "},{"text": "消息：","color": "#8c8f91"},{"text": "[已开启]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966205"}}]
-    execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=fz.sweeperMessageOff] [{"text": "- "},{"text": "消息：","color": "#8c8f91"},{"text": "[已关闭]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966204"}}]
-    ##血条栏提示
-    execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=!fz.sweeperBossbarOff] [{"text": "- "},{"text": "血条栏：","color": "#8c8f91"},{"text": "[已开启]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966207"}}]
-    execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=fz.sweeperBossbarOff] [{"text": "- "},{"text": "血条栏：","color": "#8c8f91"},{"text": "[已关闭]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966206"}}]
+# execute if data storage fz.installed {sweeper: 1b} run tellraw @s {"text": "扫地机：","color": "#ccff00"}
+#     ##扫地机时间，对应分数1478966210-1478966215
+#     execute if data storage fz.installed {sweeper: 1b} run tellraw @s [{"text": "- "},{"text": "[关]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966210"}},{"text": "[30秒]","color": "#5fff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966211"}},{"text": "[1分钟]","color": "#d7ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966212"}},{"text": "[2分钟]","color": "#ffd900","clickEvent": {"action": "run_command","value": "/trigger config set 1478966213"}},{"text": "[3分钟]","color": "#ff6100","clickEvent": {"action": "run_command","value": "/trigger config set 1478966214"}},{"text": "[4分钟]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966215"}}]
+#     ##开启矿车白名单1478966216
+#     execute if data storage fz.installed {sweeper: 1b} unless score keepMinecart parameter matches 1 run tellraw @s [{"text": "- "},{"text": "矿车白名单：","color": "#8c8f91"},{"text": "[已关闭]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966216"}}]
+#     ##关闭矿车白名单1478966217
+#     execute if data storage fz.installed {sweeper: 1b} if score keepMinecart parameter matches 1 run tellraw @s [{"text": "- "},{"text": "矿车白名单：","color": "#8c8f91"},{"text": "[已开启]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966217"}}]
+#     ##声音提示
+#     execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=!fz.sweeperSoundOff] [{"text": "- "},{"text": "声音：","color": "#8c8f91"},{"text": "[已开启]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966209"}}]
+#     execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=fz.sweeperSoundOff] [{"text": "- "},{"text": "声音：","color": "#8c8f91"},{"text": "[已关闭]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966208"}}]
+#     ##消息提示
+#     execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=!fz.sweeperMessageOff] [{"text": "- "},{"text": "消息：","color": "#8c8f91"},{"text": "[已开启]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966205"}}]
+#     execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=fz.sweeperMessageOff] [{"text": "- "},{"text": "消息：","color": "#8c8f91"},{"text": "[已关闭]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966204"}}]
+#     ##血条栏提示
+#     execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=!fz.sweeperBossbarOff] [{"text": "- "},{"text": "血条栏：","color": "#8c8f91"},{"text": "[已开启]","color": "#00ff00","clickEvent": {"action": "run_command","value": "/trigger config set 1478966207"}}]
+#     execute if data storage fz.installed {sweeper: 1b} run tellraw @s[tag=fz.sweeperBossbarOff] [{"text": "- "},{"text": "血条栏：","color": "#8c8f91"},{"text": "[已关闭]","color": "#ff0000","clickEvent": {"action": "run_command","value": "/trigger config set 1478966206"}}]
 ##记分板
 execute if data storage fz.installed {scoreboards: 1b} run tellraw @s {"text": "记分板：","color": "#ccff00"}
     ##计分板显示，对应分数1838019370-1838019379
