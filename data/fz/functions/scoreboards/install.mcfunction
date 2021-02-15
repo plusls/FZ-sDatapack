@@ -1,3 +1,4 @@
+scoreboard objectives add carpetBot dummy
 #在线时间计数器记分板，用于activation/main函数
 scoreboard objectives add actimeCounter dummy
 
@@ -95,7 +96,6 @@ scoreboard players operation 总挖掘量 totalList = 总挖掘量 totalList
 scoreboard players operation 总钓鱼数 totalList = 总钓鱼数 totalList
 scoreboard players operation 总击杀数 totalList = 总击杀数 totalList
 scoreboard players operation 总交♂易数 totalList = 总交♂易数 totalList
-scoreboard players operation 全员头铁 totalList = 全员头铁 totalList
 
 scoreboard objectives setdisplay sidebar.team.aqua activation
 scoreboard objectives setdisplay sidebar.team.yellow damageTaken

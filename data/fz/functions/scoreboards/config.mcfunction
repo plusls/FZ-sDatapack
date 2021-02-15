@@ -1,5 +1,6 @@
 #应用计分板显示，对应分数1838019369-1838019379
-execute if score @s config matches 1838019370 run team leave @s
+#execute if score @s config matches 1838019370 run team leave @s
+execute if score @s config matches 1838019370 run team join void
 execute if score @s config matches 1838019371 run team join gold
 execute if score @s config matches 1838019372 run team join aqua
 execute if score @s config matches 1838019373 run team join yellow

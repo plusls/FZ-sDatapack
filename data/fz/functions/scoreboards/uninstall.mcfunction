@@ -8,6 +8,7 @@ schedule clear fz:scoreboards/killcounter/killcounter
 schedule clear fz:scoreboards/tradingcounter/tradingcounter
 schedule clear fz:scoreboards/main
 
+scoreboard objectives remove carpetBot
 scoreboard objectives remove actimeCounter
 
 scoreboard objectives remove usedDiaAxe

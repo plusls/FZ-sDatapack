@@ -7,13 +7,13 @@ team_add('carpetBot');
 team_add('shadowedPlayer');
 team_property('carpetBot', 'prefix', '假的');
 team_property('shadowedPlayer', 'prefix', '挂机');
-global_version = '2.3.0';
+global_version = '2.3.2';
 global_carpet_version = split('\\+v',system_info('scarpet_version'));
 global_filename = system_info('app_name');
-run('tellraw @a {"text":"[提醒]输入“/' + global_filename + '”查看假人相关功能的帮助", "color":"#66ffff"}');
 run('data merge storage minecraft:fz.tagplayer {filename:"' + global_filename + '"}');
 run('carpet setDefault commandPlayer ops');
 __config() -> {
+	'scope' -> 'global',
 	'stay_loaded' -> true,
 	'allow_command_conflicts' -> true,
 	'commands' -> {
@@ -260,7 +260,9 @@ reload() ->(
 	return()
 );
 summon(player_name, position, rotation, dimension) ->(
-	player_name = slice(player_name,0,15);
+	if(length(player_name) > 16,
+		player_name = slice(player_name,0,15)
+	);
 	check_online(player_name);
 	s_player = player();
 	if(position == null,

@@ -10,5 +10,8 @@ advancement revoke @s only fz:scoreboards/killcounter
 advancement revoke @s only fz:scoreboards/tradingcounter
 advancement revoke @s only fz:scoreboards/digcounter/digtrigger
 advancement revoke @s only fz:scoreboards/digcounter/toolsfix
+advancement revoke @s only fz:config/sneak
+advancement revoke @s only fz:config/unsneak
 
 advancement revoke @s from fz:leavegame
+team join gold @s[team=]

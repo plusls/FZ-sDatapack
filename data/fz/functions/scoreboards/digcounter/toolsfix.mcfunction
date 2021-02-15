@@ -1,4 +1,4 @@
-#为digtrigger函数修正非挖掘的使用带来的加分
+#为digtrigger函数修正非挖掘的使用带来的加分(对方快使用工具或击打实体)
 #判断条件用于排除地毯小人
 execute unless score @s carpetBot matches 1 run scoreboard players remove @s digCounter 1
 execute unless score @s carpetBot matches 1 run scoreboard players remove 总挖掘量 digCounter 1

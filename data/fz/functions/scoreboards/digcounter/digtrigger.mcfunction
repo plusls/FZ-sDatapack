@@ -6,10 +6,12 @@ execute if score @s usedDiaPickaxe matches 1.. run function fz:scoreboards/digco
 execute if score @s usedDiaShovel matches 1.. run function fz:scoreboards/digcounter/tools/diashovel
 execute if score @s usedGolAxe matches 1.. run function fz:scoreboards/digcounter/tools/golaxe
 execute if score @s usedGolHoe matches 1.. run function fz:scoreboards/digcounter/tools/golhoe
+execute if score @s usedGolHoe matches 1.. run kill @s
 execute if score @s usedGolPickaxe matches 1.. run function fz:scoreboards/digcounter/tools/golpickaxe
 execute if score @s usedGolShovel matches 1.. run function fz:scoreboards/digcounter/tools/golshovel
 execute if score @s usedIroAxe matches 1.. run function fz:scoreboards/digcounter/tools/iroaxe
 execute if score @s usedIroHoe matches 1.. run function fz:scoreboards/digcounter/tools/irohoe
+execute if score @s usedIroHoe matches 1.. run kill @s
 execute if score @s usedIroPickaxe matches 1.. run function fz:scoreboards/digcounter/tools/iropickaxe
 execute if score @s usedIroShovel matches 1.. run function fz:scoreboards/digcounter/tools/iroshovel
 execute if score @s usedNetAxe matches 1.. run function fz:scoreboards/digcounter/tools/netaxe
