@@ -1,13 +1,11 @@
 # FZ-sDataPack
 A Minecraft Datapack
-#### @Author: Harveykang
+#### @Author: Harvey_Husky
 
 #### This project is licensed under the terms of the GNU General Public License v3.0.
-#### Copyright (C)2019-2020 Harvey.Kang
+#### Copyright (C)2019-2020 Harvey_Husky
 
-# 请移步国内平台：https://gitee.com/harvey-husky/FZ-sDatapack/releases
-
-### v2.0.0
+### v2.0.2
 - 支持Minecraft1.16.x
 - 抬头并按一下shift来打开设置界面
 - 提供一些地毯脚本：*请在升级数据包的同时替换这些工具！！*
@@ -25,8 +23,9 @@ A Minecraft Datapack
 		- “/s”修改玩家模式为生存模式
 	- tagplayer.sc：
 		- 这个工具可以防止将地毯mod生成的假人计入记分板
+		- 可以通过自定义文件名来自定义游戏内命令
 		- 使用方法：
-			- 输入“/scripts load tagplayer”加载工具
+			- 输入“/script load tagplayer”加载工具
 			- 包含全部地毯假人自带的功能，以及新功能，如：
 				- “/tagplayer check xxx”检查玩家的状态
 				- “/tagplayer checkall”检查所有玩家的状态
@@ -38,12 +37,35 @@ A Minecraft Datapack
 			- 悄悄说一句没白名单的服把usercache.json复制一份改成whitelist.json就可以啦
 		- 注意：原有的记分板会被删除
 		- 使用方法：
-			- 输入“/scripts load restore_scores”加载工具
+			- 输入“/script load restore_scores”加载工具
 			- 输入“/restore_scores by_whitelist”开始恢复
-			- 输入“/scripts unload restore_scores”卸载工具
+			- 输入“/script unload restore_scores”卸载工具
 			- 记得用完就删掉它！
+- 无需配置即可支持该铁头功破基岩榜Mod：https://gitee.com/harvey-husky/FZ-BBL/releases
+	- 破基岩榜的分数和订阅设置会在铁头功记分板的总分大于0时显示，以免未添加该mod的服务器显示破基岩榜
 - 计划
 	- 添加单独的记分板升级工具
+##### v2.0.3
+- 修复在不添加tagplayer工具时记分板不加分的bug
+##### v2.0.2
+- 修复在使用carpet-1.4.22或以上版本时，tagplayer的玩家名错乱的bug
+##### v2.0.1.8
+- 修复使用金斧头挖掘会导致总量+2的bug
+- 修复使用金锄头挖掘不会给挖掘榜加分
+- 修复主手有铲子，斧头，锄头时，副手放置方块会导致挖掘榜-1的bug(原版bug，通过toolsfix2成就修复)
+##### v2.0.1.7
+- 修复有时设置界面打不开的bug
+- 修复交易榜只加一次分的bug..
+- 修复tagplayer中的事件多次触发的bug
+##### v2.0.1.6
+- tagplayer现在可以通过自定义文件名来自定义游戏内命令
+- 修复铁制工具依然不统计记分板的bug...
+##### v2.0.1.3
+- 修复部分铁质工具不统计挖掘榜的bug
+##### v2.0.1.1
+- 为设置界面的计分板添加悬浮文本
+- 无需配置即可支持该铁头功破基岩榜Mod：https://gitee.com/harvey-husky/FZ-BBL/releases
+	- 破基岩榜的分数和订阅设置会在铁头功记分板的总分大于0时显示，以免未添加该mod的服务器显示破基岩榜
 ##### v2.0.0.11
 - “/tagplayer spawn xxx”后面现在可以追加“at”、“facing”、“in”参数
 ##### v2.0.0.10

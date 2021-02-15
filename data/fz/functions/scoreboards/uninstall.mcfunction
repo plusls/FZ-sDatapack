@@ -34,6 +34,7 @@ scoreboard objectives remove usedNetAxe
 scoreboard objectives remove usedNetPickaxe
 scoreboard objectives remove usedNetShovel
 scoreboard objectives remove usedNetHoe
+scoreboard objectives remove fz.bbl
 
 scoreboard objectives remove deathTester
 scoreboard objectives remove fishingTester

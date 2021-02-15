@@ -1,14 +1,18 @@
 //*************************************************************
 //************请将该文件放入"world\scripts"文件夹中************
+//*************可以自定义插件名，但不能为“player”**************
 //*************************************************************
 scoreboard_add('carpetBot');
 team_add('carpetBot');
 team_add('shadowedPlayer');
 team_property('carpetBot', 'prefix', '假的');
 team_property('shadowedPlayer', 'prefix', '挂机');
-global_version = '2.1.1';
+global_version = '2.3.0';
 global_carpet_version = split('\\+v',system_info('scarpet_version'));
 global_filename = system_info('app_name');
+run('tellraw @a {"text":"[提醒]输入“/' + global_filename + '”查看假人相关功能的帮助", "color":"#66ffff"}');
+run('data merge storage minecraft:fz.tagplayer {filename:"' + global_filename + '"}');
+run('carpet setDefault commandPlayer ops');
 __config() -> {
 	'stay_loaded' -> true,
 	'allow_command_conflicts' -> true,
@@ -150,6 +154,9 @@ __on_player_disconnects(player, reason) ->(
 		scoreboard('leaveGame', player, leaveGame + 1);
 	);
 );
+__on_player_connects(player) -> (
+	run('tellraw ' + player + ' {"text":"[提醒]输入“/' + global_filename + '”查看假人相关功能的帮助", "color":"#66ffff"}');
+);
 __on_server_shuts_down() ->(
 	player_list = player('all');
 	c_for(i = 0, i < length(player_list), i += 1,
@@ -221,7 +228,7 @@ delete_all_files(f_player) ->(
 );
 help() ->(
 	print('--使用帮助：');
-	print('/' + global_filename + ' spawn <玩家名>\n  - 生成假人');
+	print('/' + global_filename + ' spawn <玩家名> (at <x> <y> <z> facing <仰俯> <偏转> in <overworld/the_nether/the_end>)\n  - 生成假人可选“at”、“facing”、“in”参数');
 	print('/' + global_filename + ' kill <玩家名>\n  - 删除假人');
 	print('/' + global_filename + ' killall\n  - 删除全部假人');
 	print('/' + global_filename + ' tp <玩家名> <x> <y> <z> (<仰俯> <偏转>) (atBot)\n  - 传送假人到<x>,<y>,<z>，可选<仰俯>和<偏转>角度，如以<atBot>结尾则相对坐标以假人为原点');
@@ -240,10 +247,10 @@ help() ->(
 	print('/' + global_filename + ' stop <玩家名>\n  - 停止假人的一切动作');
 	print('/' + global_filename + ' check <玩家名>\n  - 检查假人状态');
 	print('/' + global_filename + ' checkall\n  - 检查所有假人状态');
-	print('tagplayer版本: ' + global_version);
+	print('' + global_filename + '版本: ' + global_version);
 	print('carpet版本: ' + global_carpet_version:0);
 	if(number(global_carpet_version:1) < 201216 || global_carpet_version == null,
-		print('§4tagplayer需要地毯1.4.21或以上来运行！否则会出现预期之外的问题')
+		print('§4' + global_filename + '需要地毯1.4.21或以上来运行！否则会出现预期之外的问题')
 	);
 	return()
 );
@@ -1205,8 +1212,8 @@ checkall() ->(
 	);
 	return()
 );
-run(str('tellraw @a {"text": "[版本信息]tagplayer版本: ' + global_version + '", "color": "#ffd900"}'));
+run(str('tellraw @a {"text": "[版本信息]' + global_filename + '版本: ' + global_version + '", "color": "#ffd900"}'));
 run(str('tellraw @a {"text": "[版本信息]carpet版本: ' + global_carpet_version:0 + '", "color": "#ffd900"}'));
 if(number(global_carpet_version:1) < 201216 || global_carpet_version == null,
-	run(str('tellraw @a {"text": "[错误]tagplayer需要地毯1.4.21或以上来运行！否则会出现预期之外的问题", "color": "#ff6100"}');)
+	run(str('tellraw @a {"text": "[错误]' + global_filename + '需要地毯1.4.21或以上来运行！否则会出现预期之外的问题", "color": "#ff6100"}');)
 );

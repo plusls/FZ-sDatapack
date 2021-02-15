@@ -1,4 +1,4 @@
-data merge storage fz.installed {sweeper:1b}
+data merge storage fz.installed {sweeper: 1b}
 bossbar add fz.sweeper {"text":"null"}
 bossbar set fz.sweeper value 0
 #提示已安装

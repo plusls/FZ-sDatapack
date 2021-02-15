@@ -8,9 +8,9 @@ scoreboard objectives add digCounter dummy
     scoreboard objectives add usedDiaShovel minecraft.used:minecraft.diamond_shovel
     scoreboard objectives add usedDiaHoe minecraft.used:minecraft.diamond_hoe
     scoreboard objectives add usedIroAxe minecraft.used:minecraft.iron_axe
-    scoreboard objectives add usedIroPickaxe minecraft.used:minecraft.iron_axe
-    scoreboard objectives add usedIroShovel minecraft.used:minecraft.iron_axe
-    scoreboard objectives add usedIroHoe minecraft.used:minecraft.iron_axe
+    scoreboard objectives add usedIroPickaxe minecraft.used:minecraft.iron_pickaxe
+    scoreboard objectives add usedIroShovel minecraft.used:minecraft.iron_shovel
+    scoreboard objectives add usedIroHoe minecraft.used:minecraft.iron_hoe
     scoreboard objectives add usedStoAxe minecraft.used:minecraft.stone_axe
     scoreboard objectives add usedStoPickaxe minecraft.used:minecraft.stone_pickaxe
     scoreboard objectives add usedStoShovel minecraft.used:minecraft.stone_shovel
@@ -37,6 +37,8 @@ scoreboard objectives add damageTaken dummy
     scoreboard objectives add 10xDamageTaken minecraft.custom:damage_taken
 scoreboard objectives add activation dummy
 scoreboard objectives add totalList dummy
+scoreboard objectives add bedrockBreaked dummy
+scoreboard objectives add fz.bbl dummy
 
 scoreboard objectives modify activation displayname {"text": "活跃时间(h)","color": "aqua"}
 scoreboard objectives modify damageTaken displayname {"text": "抖M名单","color": "yellow"}
@@ -46,6 +48,7 @@ scoreboard objectives modify fishingCounter displayname {"text": "钩直饵咸",
 scoreboard objectives modify killCounter displayname {"text": "击杀榜","color": "red"}
 scoreboard objectives modify tradingCounter displayname {"text": "交♂易榜","color": "green"}
 scoreboard objectives modify totalList displayname {"text": "总 量","color": "dark_aqua"}
+scoreboard objectives modify bedrockBreaked displayname {"text": "铁头功","color": "dark_green"}
 
 team add gold
 team add aqua
@@ -54,8 +57,9 @@ team add dark_red
 team add gray
 team add blue
 team add red
-team add dark_aqua
 team add green
+team add dark_aqua
+team add dark_green
 team modify gold color gold
 team modify aqua color aqua
 team modify yellow color yellow
@@ -65,6 +69,7 @@ team modify blue color blue
 team modify red color red
 team modify dark_aqua color dark_aqua
 team modify green color green
+team modify dark_green color dark_green
 
 team join aqua 总在线时间(h)
 team join yellow 群p抖M
@@ -73,7 +78,8 @@ team join gray 总挖掘量
 team join blue 总钓鱼数
 team join red 总击杀数
 team join green 总交♂易数
-
+team join dark_green 全员头铁
+#各计分板的总量
 scoreboard players operation 总在线时间(h) activation = 总在线时间(h) activation
 scoreboard players operation 群p抖M damageTaken = 群p抖M damageTaken
 scoreboard players operation 全部木大 deathCounter = 全部木大 deathCounter
@@ -81,6 +87,7 @@ scoreboard players operation 总挖掘量 digCounter = 总挖掘量 digCounter
 scoreboard players operation 总钓鱼数 fishingCounter = 总钓鱼数 fishingCounter
 scoreboard players operation 总击杀数 killCounter = 总击杀数 killCounter
 scoreboard players operation 总交♂易数 tradingCounter = 总交♂易数 tradingCounter
+#总榜的总量
 scoreboard players operation 总在线时间(h) totalList = 总在线时间(h) totalList
 scoreboard players operation 群p抖M totalList = 群p抖M totalList
 scoreboard players operation 全部木大 totalList = 全部木大 totalList
@@ -88,6 +95,7 @@ scoreboard players operation 总挖掘量 totalList = 总挖掘量 totalList
 scoreboard players operation 总钓鱼数 totalList = 总钓鱼数 totalList
 scoreboard players operation 总击杀数 totalList = 总击杀数 totalList
 scoreboard players operation 总交♂易数 totalList = 总交♂易数 totalList
+scoreboard players operation 全员头铁 totalList = 全员头铁 totalList
 
 scoreboard objectives setdisplay sidebar.team.aqua activation
 scoreboard objectives setdisplay sidebar.team.yellow damageTaken
@@ -97,6 +105,7 @@ scoreboard objectives setdisplay sidebar.team.blue fishingCounter
 scoreboard objectives setdisplay sidebar.team.red killCounter
 scoreboard objectives setdisplay sidebar.team.dark_aqua totalList
 scoreboard objectives setdisplay sidebar.team.green tradingCounter
+scoreboard objectives setdisplay sidebar.team.dark_green bedrockBreaked
 
 data merge storage fz.installed {scoreboards:1b}
 
