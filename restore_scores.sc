@@ -127,6 +127,7 @@ __restore(pl, s_player) ->(
 	total_killed = 0;
 	total_traded = 0;
 	total_hurt = 0;
+	total_bedrock_breaked = 0;
 	c_for(i = 0, i < length(pl), i += 1,
 		run('player ' + pl:i + ' spawn at ' + (s_player~'x'+0.1)+ ' ' +s_player~'y'+ ' ' +(s_player~'z'+0.1));
 		game_tick(50);
